@@ -213,6 +213,9 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+# Power
+TARGET_POWERHAL_VARIANT := none
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 
