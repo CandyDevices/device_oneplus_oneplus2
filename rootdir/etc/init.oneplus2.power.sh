@@ -110,7 +110,7 @@ write /sys/devices/system/cpu/cpu4/core_ctl/always_online_cpu "1 1 0 0"
 write /proc/sys/kernel/sched_migration_fixup 1
 write /proc/sys/kernel/sched_small_task 25
 write /proc/sys/kernel/sched_upmigrate 95
-write /proc/sys/kernel/sched_downmigrate 85
+write /proc/sys/kernel/sched_downmigrate 80
 write /proc/sys/kernel/sched_freq_inc_notify 400000
 write /proc/sys/kernel/sched_freq_dec_notify 400000
 
@@ -127,6 +127,11 @@ get-set-forall  /sys/class/devfreq/qcom,mincpubw.*/governor cpufreq
 
 # Disable sched_boost
 write /proc/sys/kernel/sched_boost 0
+
+# TheCrazyLex@PA Setup Shadow scheduling
+write /proc/sys/kernel/sched_use_shadow_scheduling 1
+write /proc/sys/kernel/sched_shadow_upmigrate 60
+write /proc/sys/kernel/sched_shadow_downmigrate 30
 
 # change GPU initial power level from 305MHz(level 4) to 27MHz(level 6) for power savings
 write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
