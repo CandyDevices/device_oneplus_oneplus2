@@ -28,6 +28,7 @@ ro.config.media_vol_steps=20
 bluetooth.enable_timeout_ms=12000
 bluetooth.hfp.client=1
 bt.max.hfpclient.connections=1
+persist.bt.enableAptXHD=true
 qcom.bluetooth.soc=rome
 ro.bluetooth.a4wp=true
 ro.bluetooth.emb_wp_mode=true
