@@ -185,6 +185,9 @@ TARGET_NO_RPC := true
 #include device/qcom/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
+# Compile libhwui in performance mode
+HWUI_COMPILE_FOR_PERF := true
+
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
