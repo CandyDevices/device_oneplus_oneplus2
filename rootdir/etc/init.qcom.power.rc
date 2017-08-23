@@ -28,3 +28,4 @@ service charger /charger
 
 on property:dev.bootcomplete=1
     setprop sys.io.scheduler "fiops"
+    write /sys/block/mmcblk0/queue/read_ahead_kb 256
