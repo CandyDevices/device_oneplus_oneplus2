@@ -60,9 +60,9 @@ persist.env.fastdorm.enabled=true
 persist.sys.dpmd.nsrm=3
 
 # Dex2oat limits
-dalvik.vm.boot-dex2oat-threads=4
-dalvik.vm.dex2oat-threads=4
-dalvik.vm.image-dex2oat-threads=4
+dalvik.vm.boot-dex2oat-threads=6
+dalvik.vm.dex2oat-threads=6
+dalvik.vm.image-dex2oat-threads=6
 
 # Display
 persist.sys.strictmode.disable=true
