@@ -446,23 +446,12 @@ on post-fs-data
     # Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
 
-    # Create PERFD deamon related dirs
-    mkdir /data/misc/perfd 0755 root system
-    chmod 2755 /data/misc/perfd
-    mkdir /data/system/perfd 0770 root system
-    rm /data/system/perfd/default_values
-    chmod 2770 /data/system/perfd
-    # Set perfd properties
-    setprop ro.min_freq_0 384000
-    setprop ro.min_freq_4 384000
-
     setprop vold.post_fs_data_done 1
 
 on property:sys.boot_completed=1
     #allow CPUs to go in deeper idle state than C0
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     start zram-init
-    start perfd
     write /dev/kmsg "Boot completed "
 
     # Set Memory parameters
@@ -481,12 +470,6 @@ service qseecomd /system/bin/qseecomd
     class core
     user root
     group root
-
-service perfd /system/vendor/bin/perfd
-    class main
-    user root
-    group root system readproc
-    disabled
 
 service per_mgr /system/bin/pm-service
     class late_start
