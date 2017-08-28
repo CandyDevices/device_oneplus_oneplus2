@@ -42,15 +42,8 @@ write /sys/devices/system/cpu/cpu7/online 0
 # Restorecon again to give new files the correct label.
 restorecon -R /sys/devices/system/cpu
 
-# Best effort limiting for first time boot if msm_performance module is absent
+# Limit first time boost frequency
 write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 960000
-
-# some files in /sysmodule/msm_performance/parameters are created after the restorecon of
-# /sys/. These files receive the default label "sysfs".
-restorecon -R /sys/module/msm_performance/parameters
-
-# Limit A57 max freq from msm_perf module in case CPU 4 is offline
-write /sys/module/msm_performance/parameters/cpu_max_freq "4:960000 5:960000 6:960000 7:960000"
 
 # configure governor settings for little cluster
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
@@ -90,9 +83,6 @@ copy /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq /sys/devices/system/c
 write /sys/devices/system/cpu/cpu5/online 1
 write /sys/devices/system/cpu/cpu6/online 1
 write /sys/devices/system/cpu/cpu7/online 1
-
-# Restore CPU 4 max freq from msm_performance
-write /sys/module/msm_performance/parameters/cpu_max_freq "4:4294967295 5:4294967295 6:4294967295 7:4294967295"
 
 # input boost configuration
 write /sys/kernel/cpu_input_boost/ib_freqs "960000 1344000"
