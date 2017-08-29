@@ -137,9 +137,3 @@ get-set-forall /sys/devices/soc.0/qcom,bcl.*/mode disable
 get-set-forall /sys/devices/soc.0/qcom,bcl.*/hotplug_mask $bcl_hotplug_mask
 get-set-forall /sys/devices/soc.0/qcom,bcl.*/hotplug_soc_mask $bcl_hotplug_soc_mask
 get-set-forall /sys/devices/soc.0/qcom,bcl.*/mode enable
-
-# enable extended thermal capibilities
-write /sys/module/msm_thermal/parameters/enabled Y
-write /sys/module/msm_thermal/parameters/temp_threshold 46
-write /sys/module/msm_thermal/parameters/core_limit_temp_degC 52
-write /sys/module/msm_thermal/parameters/poll_ms 100
