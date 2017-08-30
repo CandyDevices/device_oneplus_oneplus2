@@ -119,6 +119,9 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 TARGET_LDPRELOAD := libNimsWrap.so
 BOARD_USES_QCNE := true
 
+# Filesystem
+TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(PLATFORM_PATH)/android_filesystem_config.h
+
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
