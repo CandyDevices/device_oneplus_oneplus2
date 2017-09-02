@@ -512,6 +512,14 @@ on property:sys.boot_completed=1
     write /sys/devices/platform/kcal_ctrl.0/kcal "245 245 256"
     write /sys/devices/platform/kcal_ctrl.0/kcal_sat 273
 
+    # Set light thermal restrictions while optimizing apps
+    # [throttle_freq_LITTLE, throttle_freq_big, throttle_temp, unthrottle_temp]
+    write /sys/kernel/msm_thermal/zone0 "1555200 1536000 46 44"
+    write /sys/kernel/msm_thermal/zone1 "1344000 1344000 50 47"
+    write /sys/kernel/msm_thermal/zone2 "960000 960000 55 53"
+    write /sys/kernel/msm_thermal/zone3 "768000 768000 65 63"
+    write /sys/kernel/msm_thermal/enabled 1
+
 # start services from here:
 # start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon

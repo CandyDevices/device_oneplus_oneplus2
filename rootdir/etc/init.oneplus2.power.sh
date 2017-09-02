@@ -126,3 +126,17 @@ write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
 
 # set GPU default governor to msm-adreno-tz
 write /sys/class/devfreq/fdb00000.qcom,kgsl-3d0/governor msm-adreno-tz
+
+# Set normal thermal restrictions
+write /sys/kernel/msm_thermal/enabled 0
+write /sys/kernel/msm_thermal/zone0 "1555200 1536000 40 38"
+write /sys/kernel/msm_thermal/zone1 "1478400 1536000 41 40"
+write /sys/kernel/msm_thermal/zone2 "1478400 1440000 42 41"
+write /sys/kernel/msm_thermal/zone3 "1344000 1440000 43 42"
+write /sys/kernel/msm_thermal/zone4 "1344000 1344000 44 43"
+write /sys/kernel/msm_thermal/zone5 "1248000 1344000 46 44"
+write /sys/kernel/msm_thermal/zone6 "960000 1248000 48 46"
+write /sys/kernel/msm_thermal/zone7 "960000 960000 53 50"
+write /sys/kernel/msm_thermal/zone8 "768000 768000 65 60"
+write /sys/kernel/msm_thermal/sampling_ms 8000
+write /sys/kernel/msm_thermal/enabled 1
