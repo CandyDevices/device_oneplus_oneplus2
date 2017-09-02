@@ -80,16 +80,18 @@ write /sys/kernel/cpu_input_boost/ib_freqs "960000 1344000"
 write /sys/kernel/cpu_input_boost/ib_duration_ms 1000
 write /sys/kernel/cpu_input_boost/enabled 1
 
-# Configure core_ctl module parameters
+    # Enable core control with custom config
+write /sys/module/msm_thermal/core_control/enabled 1
 write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 95
-write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 85
-write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 100
+write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 80
+write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 800
+write /sys/devices/system/cpu/cpu4/core_ctl/online_delay_ms 10000
 write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
 write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
 write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
 write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
 write /sys/devices/system/cpu/cpu0/core_ctl/not_preferred 1
-write /sys/devices/system/cpu/cpu0/core_ctl/always_online_cpu 1
+write /sys/devices/system/cpu/cpu0/core_ctl/always_online_cpu "1 1 1 1"
 write /sys/devices/system/cpu/cpu4/core_ctl/always_online_cpu "1 1 0 0"
 
 # Setting B.L scheduler parameters
