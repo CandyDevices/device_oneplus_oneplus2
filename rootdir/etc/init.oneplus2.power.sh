@@ -20,13 +20,6 @@ function get-set-forall() {
 
 ################################################################################
 
-# disable thermal bcl hotplug to switch governor
-write /sys/module/msm_thermal/core_control/enabled 0
-get-set-forall /sys/devices/soc.0/qcom,bcl.*/mode disable
-bcl_hotplug_mask=`get-set-forall /sys/devices/soc.0/qcom,bcl.*/hotplug_mask 0`
-bcl_hotplug_soc_mask=`get-set-forall /sys/devices/soc.0/qcom,bcl.*/hotplug_soc_mask 0`
-get-set-forall /sys/devices/soc.0/qcom,bcl.*/mode enable
-
 # some files in /sys/devices/system/cpu are created after the restorecon of
 # /sys/. These files receive the default label "sysfs".
 restorecon -R /sys/devices/system/cpu
@@ -143,10 +136,3 @@ write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 5
 
 # set GPU default governor to msm-adreno-tz
 write /sys/class/devfreq/fdb00000.qcom,kgsl-3d0/governor msm-adreno-tz
-
-# re-enable thermal and BCL hotplug
-write /sys/module/msm_thermal/core_control/enabled 1
-get-set-forall /sys/devices/soc.0/qcom,bcl.*/mode disable
-get-set-forall /sys/devices/soc.0/qcom,bcl.*/hotplug_mask $bcl_hotplug_mask
-get-set-forall /sys/devices/soc.0/qcom,bcl.*/hotplug_soc_mask $bcl_hotplug_soc_mask
-get-set-forall /sys/devices/soc.0/qcom,bcl.*/mode enable
