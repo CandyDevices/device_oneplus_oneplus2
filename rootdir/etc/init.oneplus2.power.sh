@@ -82,17 +82,15 @@ write /sys/kernel/cpu_input_boost/enabled 1
 
 # Configure core_ctl module parameters
 write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 95
-write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 80
-write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 5000
+write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 85
+write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 100
 write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
 write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
 write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
 write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
 write /sys/devices/system/cpu/cpu0/core_ctl/not_preferred 1
 write /sys/devices/system/cpu/cpu0/core_ctl/always_online_cpu 1
-write /sys/devices/system/cpu/cpu4/core_ctl/always_online_cpu 1
-chown system:system /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
-chown system:system /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
+write /sys/devices/system/cpu/cpu4/core_ctl/always_online_cpu "1 1 0 0"
 
 # Setting B.L scheduler parameters
 write /proc/sys/kernel/sched_migration_fixup 1
@@ -100,7 +98,7 @@ write /proc/sys/kernel/sched_small_task 25
 write /proc/sys/kernel/sched_mostly_idle_load 25
 write /proc/sys/kernel/sched_mostly_idle_nr_run 3
 write /proc/sys/kernel/sched_upmigrate 95
-write /proc/sys/kernel/sched_downmigrate 80
+write /proc/sys/kernel/sched_downmigrate 85
 write /proc/sys/kernel/sched_freq_inc_notify 400000
 write /proc/sys/kernel/sched_freq_dec_notify 400000
 
