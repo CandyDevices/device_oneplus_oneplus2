@@ -116,8 +116,6 @@ chown system:system /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
 # Setting B.L scheduler parameters
 write /proc/sys/kernel/sched_migration_fixup 1
 write /proc/sys/kernel/sched_small_task 25
-write /proc/sys/kernel/sched_mostly_idle_load 25
-write /proc/sys/kernel/sched_mostly_idle_nr_run 3
 write /proc/sys/kernel/sched_upmigrate 95
 write /proc/sys/kernel/sched_downmigrate 80
 write /proc/sys/kernel/sched_freq_inc_notify 400000
