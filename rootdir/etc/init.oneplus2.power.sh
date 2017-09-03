@@ -89,8 +89,8 @@ write /sys/devices/system/cpu/cpu6/online 1
 write /sys/devices/system/cpu/cpu7/online 1
 
 # input boost configuration
-write /sys/kernel/cpu_input_boost/ib_freqs "960000 1344000"
-write /sys/kernel/cpu_input_boost/ib_duration_ms 1000
+write /sys/kernel/cpu_input_boost/ib_freqs "1344000 1344000"
+write /sys/kernel/cpu_input_boost/ib_duration_ms 1400
 write /sys/kernel/cpu_input_boost/enabled 1
 
 # Enable core control with custom config
