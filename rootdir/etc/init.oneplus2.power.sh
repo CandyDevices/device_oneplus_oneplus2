@@ -96,7 +96,7 @@ write /sys/kernel/cpu_input_boost/enabled 1
 # Enable core control with custom config
 write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 95
 write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 80
-write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 800
+write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 600
 write /sys/devices/system/cpu/cpu4/core_ctl/online_delay_ms 10000
 write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
 write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
