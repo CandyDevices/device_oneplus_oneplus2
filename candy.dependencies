@@ -2,7 +2,7 @@
   {
     "repository": "CertifiedBlyndGuy/zippy-msm8994",
     "target_path": "kernel/oneplus/msm8994",
-    "branch": "zippy"
+    "branch": "nougat"
   },
   {
     "repository": "CandyDevices/device_oppo_common",
