@@ -136,9 +136,9 @@ write /sys/class/devfreq/fdb00000.qcom,kgsl-3d0/governor msm-adreno-tz
 
 # Set normal thermal restrictions
 write /sys/kernel/msm_thermal/enabled 0
-write /sys/kernel/msm_thermal/zone0 "1555200 1536000 40 38"
-write /sys/kernel/msm_thermal/zone1 "1478400 1536000 41 40"
-write /sys/kernel/msm_thermal/zone2 "1478400 1440000 42 41"
+write /sys/kernel/msm_thermal/zone0 "1344000 1536000 40 38"
+write /sys/kernel/msm_thermal/zone1 "1344000 1536000 41 40"
+write /sys/kernel/msm_thermal/zone2 "1344000 1440000 42 41"
 write /sys/kernel/msm_thermal/zone3 "1344000 1440000 43 42"
 write /sys/kernel/msm_thermal/zone4 "1344000 1344000 44 43"
 write /sys/kernel/msm_thermal/zone5 "1248000 1344000 46 44"
