@@ -20,13 +20,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from oneplus2 device
 $(call inherit-product, device/oneplus/oneplus2/device.mk)
 
-# Inherit some common carbon stuff.
-$(call inherit-product, vendor/carbon/config/common.mk)
+# Inherit some common Candy stuffs.
+$(call inherit-product, vendor/candy/config/common.mk)
 
-# Inherit Carbon GSM telephony parts
-$(call inherit-product, vendor/carbon/config/gsm.mk)
+# Inherit Candy GSM telephony parts
+$(call inherit-product, vendor/candy/config/gsm.mk)
 
-PRODUCT_NAME := carbon_oneplus2
+PRODUCT_NAME := candy_oneplus2
 PRODUCT_DEVICE := oneplus2
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -44,6 +44,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.model
 
 PRODUCT_PROPERTY_OVERRIDES += \
-     ro.carbon.maintainer="gtpitch"
+     ro.candy.maintainer="RJ"
 
 TARGET_VENDOR := oneplus
