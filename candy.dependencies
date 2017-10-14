@@ -1,9 +1,15 @@
 [
  {
-   "remote"     : "carbon",
-   "repository" : "CarbonROM/android_kernel_oneplus_msm8994",
+   "remote"     : "candy",
+   "repository" : "CandyDevices/kernel_oneplus_msm8994",
    "target_path": "kernel/oneplus/msm8994",
-   "revision"   : "cr-6.0"
+   "revision"   : "oreo"
+ },
+ {
+   "remote"     : "candy",
+   "repository" : "CandyDevices/vendor_oneplus",
+   "target_path": "vendor/oneplus",
+   "branch"     : "oreo"
  },
  {
    "remote"     : "carbon",
