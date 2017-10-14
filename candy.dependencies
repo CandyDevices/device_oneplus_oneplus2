@@ -1,7 +1,7 @@
 [
  {
    "remote"     : "candy",
-   "repository" : "CandyDevices/kernel_oneplus_msm8994",
+   "repository" : "CertifiedBlyndGuy/zippy-msm8994",
    "target_path": "kernel/oneplus/msm8994",
    "revision"   : "oreo"
  },
