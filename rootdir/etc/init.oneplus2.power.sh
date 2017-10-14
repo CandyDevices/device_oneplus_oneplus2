@@ -98,20 +98,18 @@ write /sys/module/msm_performance/parameters/cpu_max_freq "4:4294967295 5:429496
 write /sys/module/cpu_boost/parameters/input_boost_freq "0:960000 1:960000 2:960000 3:960000"
 write /sys/module/cpu_boost/parameters/input_boost_ms 200
 
-# Configure core_ctl module parameters
-write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 60
-write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 30
-write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms  100
+# Enable core control with custom config
+write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 95
+write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 80
+write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 600
+write /sys/devices/system/cpu/cpu4/core_ctl/online_delay_ms 10000
 write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
 write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
-write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
-write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 0
-write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 30
-write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 5
-write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms 5000
+write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
+write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
 write /sys/devices/system/cpu/cpu0/core_ctl/not_preferred 1
-chown system:system /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
-chown system:system /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
+write /sys/devices/system/cpu/cpu0/core_ctl/always_online_cpu "1 1 1 1"
+write /sys/devices/system/cpu/cpu4/core_ctl/always_online_cpu "1 1 0 0"
 
 # Setting B.L scheduler parameters
 write /proc/sys/kernel/sched_migration_fixup 1
