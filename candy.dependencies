@@ -18,7 +18,7 @@
    "revision"   : "cr-6.0"
  },
  {
-   "remote"     : "lineage",
+   "remote"     : "los",
    "repository" : "LineageOS/android_packages_resources_devicesettings",
    "target_path": "packages/resources/devicesettings",
    "revision"   : "lineage-15.0"
